@@ -9,7 +9,7 @@
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "/home.component.html"
+            "dest": "/index.html"
         }
     ],
     "static-build": {

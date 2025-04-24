@@ -1,0 +1,138 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.user-info-dialog {
+    flex-grow: 1; /* Giúp container mở rộng tối đa */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-y: auto;
+    padding: 25px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 20px;
+    font-weight: normal;
+}
+
+.header button {
+    background: transparent;
+    font-size: 25px;
+    cursor: pointer;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.header button:hover {
+    border-radius: 20px;
+    background-color: rgba(225, 225, 225, 0.1);
+}
+
+.avatar-name {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.avatar {
+
+    position: relative;
+    margin-right: 15px;
+}
+
+.avatar img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.camera-icon {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: #fff;
+    border-radius: 50%;
+    padding: 4px;
+    cursor: pointer;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.9);
+    font-size: 25px;
+}
+
+.name {
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+    font-size: 20px;
+}
+
+.edit-icon {
+    margin-left: 8px;
+    cursor: pointer;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.9);
+    font-size: 20px;
+}
+
+.personal-info {
+    margin-top: 20px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 20px;
+}
+
+.info-item span:first-child {
+    min-width: 100px; /* Độ rộng tối thiểu cho nhãn */
+    color: rgba(255, 255, 255, 0.6); /* Màu chữ nhãn */
+    text-align: left; /* Căn trái nhãn */
+}
+
+.info-item span:last-child {
+    text-align: left; /* Căn trái giá trị */
+    color: #fff; /* Màu chữ giá trị */
+    flex-grow: 1; /* Đảm bảo chiếm không gian còn lại */
+}
+
+.note {
+    margin-top: 20px;
+    font-size: 13px;
+    color: #888;
+}
+
+.update-btn {
+    margin-top: 15px;
+    font-size: 15px;
+    font-weight: bold;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.1); /* Màu nền trong suốt */
+    color: #fff; /* Màu chữ trắng */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Đường viền trong suốt */
+    padding: 8px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.update-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Hiệu ứng hover */
+}
+

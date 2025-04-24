@@ -1,0 +1,30 @@
+<div class="dialog-header">
+    <input type="text" class="input-dialog" placeholder="Tìm bạn..." 
+        [(ngModel)]="searchTerm">
+    <button (click)="closeDialog()">Đóng</button>
+</div>
+
+<div class="dialog-content">
+    <div class="suggested-section">
+        <p class="suggested-title">Bạn của bạn cần tìm</p>
+        <ul>
+            <!-- <li *ngFor="let friend of suggestedFriends">{{ friend }}</li> -->
+            <div class="friend-item" *ngFor="let friend of suggestedFriends">
+                <img [src]="friend.avatar" alt="Avatar" class="avatar">
+                <div class="friend-info">
+                    <p class="friend-name">{{ friend.name }}</p>
+                </div>
+                <!-- <button mat-icon-button class="more-button" [matMenuTriggerFor]="dialogMenu">
+                    <mat-icon>more_vert</mat-icon>
+                </button> -->
+            </div>
+        </ul>
+    </div>
+
+
+    <!-- <mat-menu #dialogMenu="matMenu" class="custom-menu">
+        <button mat-menu-item>
+            <mat-icon>person</mat-icon> Thông tin tài khoản
+        </button>
+    </mat-menu> -->
+</div>

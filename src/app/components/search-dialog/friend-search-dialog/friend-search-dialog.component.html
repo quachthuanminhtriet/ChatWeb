@@ -1,0 +1,36 @@
+<div class="dialog-container">
+  <div class="dialog-title">
+    <h3>Add Friend</h3>
+    <button (click)="closeDialog()">✖</button>
+  </div>
+
+  <div class="dialog-header">
+    <img src="https://res.cloudinary.com/dywyrpfw7/image/upload/v1745247491/d4kxbpmvarvtvhsnfpea.png" class="dialog-img"
+      alt="Avatar" />
+    <span>Email</span>
+    <input class="input-dialog" type="text" placeholder="Nhập email hoặc username..." [(ngModel)]="searchKeyword"
+      (keydown.enter)="searchUsers()" autofocus />
+  </div>
+
+  <div class="suggested-section" *ngIf="suggestedFriends.length > 0">
+    <p class="suggested-title">Có thể bạn quen</p>
+    <ul>
+      <div class="suggested-item" *ngFor="let suggestion of suggestedFriends">
+        <img [src]="suggestion.avatarUrl" alt="Avatar" class="avatar" />
+        <div class="friend-info">
+          <p>{{ suggestion.fullName || suggestion.username }}</p>
+          <p class="mutual" *ngIf="suggestion.mutual">{{ suggestion.mutual }}</p>
+        </div>
+        <button [ngClass]="{ 'cancel': suggestion.hasSentRequest }" (click)="toggleFriendRequest(suggestion)">
+          {{ suggestion.hasSentRequest ? 'Hủy yêu cầu' : 'Kết bạn' }}
+        </button>
+      </div>
+    </ul>
+  </div>
+
+  <div class="dialog-footer">
+    <button class="bt-cancel" (click)="closeDialog()">Cancel</button>
+    <button class="bt-search" (click)="searchUsers()">Search</button>
+  </div>
+
+</div>

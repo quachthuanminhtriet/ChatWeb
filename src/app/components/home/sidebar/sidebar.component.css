@@ -1,0 +1,81 @@
+.chat-sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.sidebar-item {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.sidebar-item.active-tab,
+.sidebar-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-item mat-icon {
+    font-size: 25px;
+    color: transparent; /* Làm icon trong suốt */
+    -webkit-text-stroke: 1px white; /* Tạo viền trắng */
+}
+
+.sidebar-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.sidebar-divider {
+    width: 60%;
+    border: 0.5px solid rgba(255, 255, 255, 0.3);
+    margin: 10px 0;
+}
+
+.custom-setting {
+    margin-top: auto;
+    margin-bottom: 20px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-size: 25px;
+    color: transparent;
+    -webkit-text-stroke: 1px white;
+    transition: background 0.3s ease-in-out;
+}
+
+.custom-setting.active-tab,
+.custom-setting:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 8px; 
+}
+/*===== settingsMenu =====*/
+.settingsMenu-divider {
+    border: 0.5px solid rgba(0, 0, 0, 0.2);
+    margin: 10px 0;
+    margin-left: 20px;
+}
+
+.logout mat-icon {
+    color: red !important;
+}

@@ -1,0 +1,67 @@
+.group-container {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    max-width: 700px;
+}
+h3 {
+    color: white;
+    font-weight: normal;
+}
+
+
+.group-item {
+    display: flex;
+    width: 300px;
+    padding: 15px;
+    border-radius: 5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background 0.3s ease;
+}
+
+.group-item:hover {
+    background-color: rgba(225, 225, 225, 0.1);
+    cursor: pointer;
+}
+
+.avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.group-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.group-name {
+    color: #ffffff;
+    font-weight: normal;
+    margin: 0;
+}
+
+.group-member {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.more-button {
+    background: transparent !important; /* Xóa nền */
+    color: white !important; /* Màu icon trắng */
+    border: none; /* Xóa viền */
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; /* Làm tròn nút */
+    transition: background 0.2s ease-in-out;
+}
+
+.more-button:hover {
+    background: rgba(255, 255, 255, 0.1); /* Hiệu ứng hover nhẹ */
+}
+

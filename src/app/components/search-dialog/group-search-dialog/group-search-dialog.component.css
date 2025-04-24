@@ -1,0 +1,226 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.dialog-container {
+    flex-grow: 1; /* Giúp container mở rộng tối đa */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-y: auto;
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+}
+
+.dialog-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-weight:bold;
+}
+
+.dialog-title button {
+    background: transparent;
+    font-size: 25px;
+    cursor: pointer;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.dialog-title button:hover {
+    border-radius: 20px;
+    background-color: rgba(225, 225, 225, 0.1);
+}
+  
+.dialog-header {
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.group-infor {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.dialog-img {
+    width: 30px;
+    height: 30;
+    margin-right: 10px;
+  }
+
+.group-infor input {
+    outline: none; /* Xóa viền khi focus */
+    color: #ffffff;
+    width: 100%;
+    padding: 10px 8px;
+    font-size: 15px;
+    border: none;
+    background-color: transparent;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+ }
+
+ .input-namegroup::placeholder {
+    color: rgba(225, 225, 225, 0.5);
+ }
+/* .input-dialog::placeholder {
+    
+} */
+
+.group-search-friend {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    border-radius: 20px;
+    padding: 10px 10px;
+    flex-grow: 1;
+    background: rgba(225, 225, 225, 0.1);
+    margin-top: 30px;
+}
+
+.group-search-friend input {
+    font-size: 15px;
+    border: none;
+    background-color: transparent;
+    color: white;
+    outline: none;
+    width: 100%;
+    padding-left: 8px;
+}
+
+.input-group-search-friend::placeholder {
+    color: rgba(225, 225, 225, 0.5);
+}
+
+
+/*===== List suggest =====*/
+.suggested-title {
+    font-weight: normal;
+    color:  rgba(225, 225, 225, 0.5);
+}
+
+.suggested-item {
+    display: flex;
+    width: 350px;
+    border-radius: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background 0.3s ease;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.custom-checkbox {
+    width: 18px;
+    height: 18px;
+    appearance: none; /* Xóa checkbox mặc định */
+    border: 2px solid rgba(225, 225, 225, 0.2);
+    border-radius: 50%; /* Làm cho checkbox tròn */
+    cursor: pointer;
+    margin-right: 15px;
+    position: relative;
+}
+
+.custom-checkbox:checked {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.custom-checkbox:checked::after {
+    content: "✔";
+    color: white;
+    font-size: 12px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.suggested-item img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.friend-info {
+    flex-grow: 1; /* Đảm bảo phần thông tin không bị đè */
+}
+
+.mutual {
+    font-weight: normal;
+    color:  rgba(225, 225, 225, 0.5);
+    font-size: 14px;
+}
+
+.suggested-item button {
+    background: transparent;
+    width: 100px;
+    height: 35px;
+    border-radius: 10px;
+    font-weight: bold;
+    border: 2px solid #007bff;
+    color: #007bff;
+}
+
+.suggested-item button:hover {
+    background-color: #113e6e;
+}
+
+.suggested-item:hover {
+    background-color: rgba(225, 225, 225, 0.1);
+    cursor: pointer;
+}
+
+.dialog-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+    padding-top: 10px;
+}
+
+.dialog-footer .bt-cancel {
+    width: 80px;
+    height: 40px;
+    cursor: pointer;
+    color: white;
+    border: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: rgba(225, 225, 225, 0.1);
+}
+.dialog-footer .bt-cancel:hover {
+    background-color: rgba(225, 225, 225, 0.3);
+    cursor: pointer;
+}
+
+.dialog-footer .bt-search {
+    width: 120px;
+    height: 40px;
+    cursor: pointer;
+    color: white;
+    border: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #007bff;
+}
+.dialog-footer .bt-search:hover {
+    background-color: #367cc8;
+    cursor: pointer;
+}

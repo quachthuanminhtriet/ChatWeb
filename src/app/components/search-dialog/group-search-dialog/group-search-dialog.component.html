@@ -1,0 +1,50 @@
+<div class="dialog-container">
+    <div class="dialog-title">
+        <h3>Lời mời kết bạn</h3>
+        <button (click)="closeDialog()">✖</button>
+    </div>
+
+    <!-- <div class="suggested-section" *ngIf="respondFriend.length > 0">
+        <p class="suggested-title">Lời mời đã nhận</p>
+        <ul>
+          <div class="suggested-item" *ngFor="let respond of respondFriend">
+            <img [src]="respond.avatarUrl" alt="Avatar" class="avatar" />
+            <div class="friend-info">
+              <p>{{ respond.fullName || respond.username }}</p>
+              <p class="mutual" *ngIf="respond.mutual">{{ respond.mutual }}</p>
+            </div>
+            <button>Kết bạn</button>
+          </div>
+        </ul>
+      </div> -->
+
+    <div class="dialog-header mat-elevation-z5">
+        <div class="group-infor">
+            <mat-icon>camera_alt</mat-icon>
+            <input class="input-namegroup" type="text" placeholder="Enter group name..." />
+        </div>
+        <div class="group-search-friend">
+            <mat-icon class="search-icon">search</mat-icon>
+            <input class="input-group-search-friend" type="text" placeholder="Enter name or phone number" />
+        </div>
+    </div>
+
+    <div class="suggested-section">
+        <p class="suggested-title">Recent chat</p>
+        <ul>
+            <div class="suggested-item" *ngFor="let suggestion of suggestedFriends">
+                <input type="checkbox" class="custom-checkbox">
+                <img [src]="suggestion.avatar" alt="Avatar" class="avatar">
+                <div class="friend-info">
+                    <p>{{ suggestion.name }}</p>
+                    <p class="mutual">{{ suggestion.mutual }}</p>
+                </div>
+            </div>
+        </ul>
+    </div>
+
+    <div class="dialog-footer">
+        <button class="bt-cancel" (click)="closeDialog()">Cancel</button>
+        <button class="bt-search">Create group</button>
+    </div>
+</div>

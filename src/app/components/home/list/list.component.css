@@ -1,0 +1,87 @@
+.chat-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    transition: background 0.3s ease-in-out;
+    background: rgba(0, 0, 0, 0.8);
+    height: 100vh;
+}
+
+.search-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    padding: 5px 10px;
+    margin-left: 10px;
+    flex-grow: 1;
+    background: rgba(225, 225, 225, 0.2);
+}
+
+.search-icon {
+    color: white;
+}
+
+.custom-input {
+    border: none;
+    background: transparent;
+    color: white;
+    outline: none;
+    width: 100%;
+    padding-left: 8px;
+}
+
+.custom-input::placeholder {
+    color: rgba(225, 225, 225, 0.8);
+}
+
+.search-custom-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+    color: transparent; /* Làm icon trong suốt */
+    -webkit-text-stroke: 1px white; /* Tạo viền trắng */
+}
+
+.search-custom-icon:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.chat-content {
+    flex-grow: 1;
+    overflow-y: auto; /* Nếu danh sách dài thì có thể cuộn */
+}
+
+.search-custom-icon {
+    position: relative;
+  }
+  
+  .notification-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+    border: 2px solid white;
+  }
+  
+  .has-noti {
+    background-color: yellow; /* Chỉ là ví dụ, có thể thay đổi theo nhu cầu */
+  }
+  

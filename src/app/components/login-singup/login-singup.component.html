@@ -1,0 +1,70 @@
+<div class="container" id="container">
+    <!-- Form Sign In -->
+    <div *ngIf="activeForm === 'signin'" class="form-container sign-in-container">
+        <form (submit)="signIn(); $event.preventDefault()">
+            <h1>Sign in</h1>
+            <div class="social-container">
+                <a href="#" class="social">
+                    <img src="https://res.cloudinary.com/dywyrpfw7/image/upload/v1740995686/iqjkhepgilbxixrbzhft.png" alt="Google">
+                </a>
+                <a href="#" class="social">
+                    <img src="https://res.cloudinary.com/dywyrpfw7/image/upload/v1740995682/agjltxdrmlexti9t2sxp.png" alt="Facebook">
+                </a>
+                <a href="#" class="social">
+                    <img src="https://res.cloudinary.com/dywyrpfw7/image/upload/v1740995670/hhtvajbfbvbmci3tjtzu.png" alt="Twitter">
+                </a>
+            </div>
+            <span>Experience it with friends</span>
+            <input type="email" placeholder="Email" [(ngModel)]="email" name="email" required />
+            <input type="password" placeholder="Password" [(ngModel)]="password" name="password" required />
+            <button type="submit">Sign In</button>
+            <p class="error" *ngIf="message">{{ message }}</p>
+        </form>
+    </div>
+
+    <!-- Form Sign Up -->
+    <div *ngIf="activeForm === 'signup'" class="form-container sign-up-container">
+        <form (submit)="signUp(); $event.preventDefault()">
+            <h1>Sign up</h1>
+            <div class="social-container">
+                <a href="#" class="social">
+                    <img src="https://res.cloudinary.com/dywyrpfw7/image/upload/v1740995686/iqjkhepgilbxixrbzhft.png" alt="Google">
+                </a>
+                <a href="#" class="social">
+                    <img src="https://res.cloudinary.com/dywyrpfw7/image/upload/v1740995682/agjltxdrmlexti9t2sxp.png" alt="Facebook">
+                </a>
+                <a href="#" class="social">
+                    <img src="https://res.cloudinary.com/dywyrpfw7/image/upload/v1740995670/hhtvajbfbvbmci3tjtzu.png" alt="Twitter">
+                </a>
+            </div>
+            <span>Experience it with friends</span>
+            <input type="text" placeholder="Name" [(ngModel)]="name" name="name" required />
+            <input type="email" placeholder="Email" [(ngModel)]="email" name="email" required />
+            <input type="password" placeholder="Password" [(ngModel)]="password" name="password" required />
+            <button type="submit">Sign Up</button>
+            <p class="error" *ngIf="message">{{ message }}</p>
+        </form>
+    </div>
+
+    <!-- Overlay for Sign In -->
+    <div class="overlay-container" *ngIf="activeForm === 'signup'">
+        <div class="overlay">
+            <div class="overlay-left">
+                <h1>Welcome Back!</h1>
+                <p>To keep connected with us please login with your personal info</p>
+                <button (click)="switchForm('signin')" class="ghost">Sign In</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay for Sign Up -->
+    <div class="overlay-container" *ngIf="activeForm === 'signin'">
+        <div class="overlay">
+            <div class="overlay-right">
+                <h1>Hello, Friend!</h1>
+                <p>Enter your personal details and start your journey with us</p>
+                <button (click)="switchForm('signup')" class="ghost">Sign Up</button>
+            </div>
+        </div>
+    </div>
+</div>

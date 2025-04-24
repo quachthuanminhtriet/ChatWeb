@@ -1,0 +1,54 @@
+<div class="chat-sidebar">
+    <div class="sidebar">
+        <!-- Avatar -->
+        <div class="sidebar-item iconavatar" (click)="selectTab('chat')">
+            <img src="https://res.cloudinary.com/dywyrpfw7/image/upload/v1741062641/gyjdx9ztcqt6arxyb1al.png"
+                class="sidebar-avatar" alt="Avatar" routerLink="/home/chat">
+        </div>
+
+        <!-- Các nút điều hướng khác -->
+        <div class="sidebar-item custom-chat" [ngClass]="{'active-tab': selectedTab === 'chat'}"
+            (click)="selectTab('chat')">
+            <button mat-icon-button routerLink="/home/chat">
+                <mat-icon>chat</mat-icon>
+            </button>
+        </div>
+        <div class="sidebar-item custom-add-friend" [ngClass]="{'active-tab': selectedTab === 'add-friend'}"
+            (click)="selectTab('add-friend')">
+            <button mat-icon-button routerLink="/home/friends">
+                <mat-icon>person</mat-icon>
+            </button>
+        </div>
+        <!-- <div class="sidebar-item" [ngClass]="{'active-tab': selectedTab === 'group'}" (click)="selectTab('group')">
+            <button mat-icon-button routerLink="/home/group">
+                <mat-icon>group</mat-icon>
+            </button>
+        </div> -->
+
+        <hr class="sidebar-divider">
+
+        <!-- Nút Settings -->
+        <div class="custom-setting" [ngClass]="{'active-tab': selectedTab === 'settings'}"
+            (click)="selectTab('settings')">
+            <button mat-icon-button [matMenuTriggerFor]="settingsMenu">
+                <mat-icon>settings</mat-icon>
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Menu của Settings -->
+<mat-menu #settingsMenu="matMenu" class="custom-menu">
+    <button mat-menu-item (click)="openUserInfoDialog()">
+      <mat-icon>person</mat-icon> Thông tin tài khoản
+    </button>
+  
+    <hr class="settingsMenu-divider">
+  
+    <button mat-menu-item class="logout" (click)="logout()">
+      <mat-icon color="warn">logout</mat-icon> Đăng xuất
+    </button>
+  </mat-menu>
+  
+
+

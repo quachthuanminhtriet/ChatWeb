@@ -1,0 +1,31 @@
+<div class="dialog-container">
+    <div class="dialog-title">
+        <h3>Lời mời kết bạn</h3>
+        <button (click)="closeDialog()">✖</button>
+    </div>
+
+    <p class="respond-title">Lời mời đã nhận</p>
+
+    <div class="respond-section">
+        <div class="respond-item" *ngFor="let request of friendRequests">
+            <div class="friend-info">
+                <img [src]="request.requester.avatarUrl || 'default-avatar-url'" alt="Avatar" class="avatar" />
+                <div>
+                    <p>{{ request.requester.fullName || request.requester.username }}</p>
+                    <p class="request-time">{{ request.requester.createdAt | date:'short' }}</p>
+                </div>
+            </div>
+            <div class="mutual">
+                <p>{{ request.mutual }} bạn chung</p>
+            </div>
+            <div class="respond-button">
+                <button class="refuse" (click)="declineFriendRequest(request.id)">Từ chối</button>
+                <button class="agree" (click)="acceptFriendRequest(request.id)">Kết bạn</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="dialog-footer">
+        <button class="bt-cancel" (click)="closeDialog()">Hủy bỏ</button>
+    </div>
+</div>

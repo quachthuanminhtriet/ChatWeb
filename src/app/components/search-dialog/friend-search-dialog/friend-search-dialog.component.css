@@ -1,0 +1,184 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.dialog-container {
+    flex-grow: 1; /* Giúp container mở rộng tối đa */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-y: auto;
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #fff;
+}
+
+.dialog-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-weight:bold;
+}
+
+.dialog-title button {
+    background: transparent;
+    font-size: 25px;
+    cursor: pointer;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.dialog-title button:hover {
+    border-radius: 20px;
+    background-color: rgba(225, 225, 225, 0.1);
+}
+  
+.dialog-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    margin-left: 5px;
+ }
+
+span {
+    display: flex;
+    align-items: center;
+    margin-right: 50px;
+}
+
+.dialog-img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+
+.dialog-header input {
+    outline: none; /* Xóa viền khi focus */
+    color: #ffffff;
+    width: 70%;
+    padding: 10px 8px;
+    font-size: 15px;
+    border: none;
+    background-color: transparent;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+ }
+.input-dialog::placeholder {
+    color: rgba(225, 225, 225, 0.5);
+}
+
+
+/*===== List suggest =====*/
+.suggested-title {
+    font-weight: normal;
+    color:  rgba(225, 225, 225, 0.5);
+}
+
+.suggested-item {
+    display: flex;
+    width: 350px;
+    border-radius: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background 0.3s ease;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.suggested-item img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.friend-info {
+    flex-grow: 1; /* Đảm bảo phần thông tin không bị đè */
+}
+
+.mutual {
+    font-weight: normal;
+    color:  rgba(225, 225, 225, 0.5);
+    font-size: 14px;
+}
+
+/* Nút kết bạn (màu xanh) */
+.suggested-item button {
+    background: transparent;
+    width: 100px;
+    height: 35px;
+    border-radius: 10px;
+    font-weight: bold;
+    border: 2px solid #007bff;
+    color: #007bff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.suggested-item button:hover {
+    background-color: #113e6e;
+    color: white;
+}
+
+/* Nút huỷ yêu cầu (màu đỏ) */
+.suggested-item button.cancel {
+    border-color: #626262;
+    color: #ffffff;
+}
+
+.suggested-item button.cancel:hover {
+    background-color: #dc3545;
+    color: white;
+}
+
+
+/* .suggested-item:hover {
+    background-color: rgba(225, 225, 225, 0.1);
+    cursor: pointer;
+} */
+
+.dialog-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+    padding-top: 10px;
+}
+
+.dialog-footer .bt-cancel {
+    width: 80px;
+    height: 40px;
+    cursor: pointer;
+    color: white;
+    border: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: rgba(225, 225, 225, 0.1);
+}
+.dialog-footer .bt-cancel:hover {
+    background-color: rgba(225, 225, 225, 0.3);
+    cursor: pointer;
+}
+
+.dialog-footer .bt-search {
+    width: 80px;
+    height: 40px;
+    cursor: pointer;
+    color: white;
+    border: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #007bff;
+}
+.dialog-footer .bt-search:hover {
+    background-color: #367cc8;
+    cursor: pointer;
+}

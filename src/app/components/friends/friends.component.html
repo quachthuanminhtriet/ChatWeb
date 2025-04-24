@@ -1,0 +1,12 @@
+<div class="friends-container">
+    <h3>List of friends</h3>
+    <div class="friend-list friend-list-container" #chatContent>
+        <div class="friend-item" *ngFor="let friend of friendList" (click)="selectChat(friend)">
+            <img [src]="friend.avatar" alt="Avatar" class="avatar">
+            <div class="friend-info">
+                <p class="friend-name">{{ friend.name }}</p>
+                <!-- <p class="friend-status" *ngIf="friend.status">{{ friend.status }}</p> -->
+            </div>       
+        </div>
+    </div>
+</div>

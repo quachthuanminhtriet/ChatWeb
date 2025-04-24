@@ -1,0 +1,89 @@
+<div class="messages mat-elevation-z5">
+  <div class="chat-container mat-elevation-z5" *ngIf="selectedUser; else welcome">
+    <!-- Header hiển thị tên và trạng thái người dùng -->
+    <div class="chat-header">
+      <div class="user-info">
+        <img [src]="selectedUser?.avatar" alt="Avatar" class="avatar">
+        <div class="user-details">
+          <h3>{{ selectedUser?.fullName }}</h3>
+        </div>
+      </div>
+
+      <div class="chat-options">
+        <mat-icon>search</mat-icon>
+        <mat-icon>info</mat-icon>
+      </div>
+    </div>
+
+    <!-- Nội dung chat -->
+    <div class="chat-content messages-container" #chatContent>
+      <ng-container *ngFor="let message of selectedChat?.messages">
+        <div class="message" [ngClass]="message.isSelf ? 'self' : 'friend'">
+          <div class="message-content">
+            <div class="message-text">
+              <!-- Hiển thị ảnh -->
+              <div *ngIf="message.fileType === 'image'" class="image-container">
+                <div class="image-wrapper">
+                  <img [src]="message.file" alt="Hình ảnh" class="chat-image" />
+                  <button (click)="downloadFile(message)" class="download-button">
+                    <mat-icon>arrow_downward</mat-icon>
+                  </button>
+                </div>
+              </div>              
+              <!-- Hiển thị video -->
+              <video *ngIf="message.fileType === 'video'" [src]="message.file" controls class="chat-video"></video>
+
+              <!-- Hiển thị tên file nếu là file -->
+              <div *ngIf="message.fileType === 'file'" class="file-container">
+                <span class="file-name">
+                  {{ message.fileName || 'Tệp đính kèm' }}
+                </span>
+                <!-- Nút tải file -->
+                <button (click)="downloadFile(message)" class="download-button-file">
+                  <mat-icon>arrow_downward</mat-icon>
+                </button>
+              </div>
+
+              <!-- Hiển thị text nếu không phải ảnh, video hay file -->
+              <span
+                *ngIf="!message.fileType || (message.fileType !== 'image' && message.fileType !== 'video' && message.fileType !== 'file')">
+                {{ message.text || message.content }}
+              </span>
+
+              <!-- Hiển thị thời gian tin nhắn -->
+              <span class="message-time">{{ formatTime(message.createdAt) || '00:00' }}</span>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+
+    <!-- Thanh chứa file ảnh, video, tài liệu -->
+    <div class="chat-toolbar">
+      <mat-icon class="icon-img" (click)="openFilePicker('image')">image</mat-icon>
+      <mat-icon (click)="openFilePicker('video')">videocam</mat-icon>
+      <mat-icon (click)="openFilePicker('file')">attach_file</mat-icon>
+    </div>
+
+    <!-- Ô nhập tin nhắn -->
+    <div class="chat-input">
+      <input type="text" placeholder="Nhập tin nhắn tới {{ selectedUser?.fullName }}" [(ngModel)]="newMessage"
+        (keydown.enter)="sendMessage()" (focus)="isTyping = true" (blur)="checkEmpty()" />
+
+      <div class="chat-icons">
+        <mat-icon [ngClass]="{ 'active': (newMessage && newMessage.trim()) }" (click)="sendMessage()">send</mat-icon>
+      </div>
+    </div>
+  </div>
+
+  <!-- Giao diện chào mừng khi chưa chọn ai -->
+  <ng-template #welcome>
+    <div class="welcome-container">
+      <h1>Chào mừng đến với <span class="highlight">Web-OTT PC</span></h1>
+      <p>Khám phá những tiện ích hỗ trợ làm việc và trò chuyện cùng người thân, bạn bè được tối ưu hóa cho máy
+        tính của bạn.</p>
+      <img src="https://res.cloudinary.com/dywyrpfw7/image/upload/v1741071849/y8cu2ezmaf0f2atkkyya.png"
+        class="img-welcome">
+    </div>
+  </ng-template>
+</div>

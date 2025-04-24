@@ -1,0 +1,27 @@
+<div class="chat-list mat-elevation-z5">
+    <div class="search-container">
+        <div class="search-box" (click)="openSearchDialog()">
+            <mat-icon class="search-icon">search</mat-icon>
+            <input type="text" placeholder="Search user..." class="custom-input">
+        </div>
+        <div class="search-custom-icon" [ngClass]="{'active-tab': selectedTab === 'add-friend'}"
+            (click)="openFriendDialog()">
+            <button mat-icon-button>
+                <mat-icon>person_add</mat-icon>
+            </button>
+        </div>
+        <div class="search-custom-icon"
+            [ngClass]="{'active-tab': selectedTab === 'create-noti', 'has-noti': hasNewFriendRequest}"
+            (click)="openNotiDialog()">
+            <button mat-icon-button>
+                <mat-icon>notifications</mat-icon>
+            </button>
+            <!-- Chấm đỏ nếu có lời mời kết bạn -->
+            <!-- <div *ngIf="hasNewFriendRequest" class="notification-badge"></div> -->
+        </div>
+    </div>
+
+    <div class="chat-content">
+        <router-outlet></router-outlet>
+    </div>
+</div>

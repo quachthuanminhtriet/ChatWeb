@@ -1,0 +1,43 @@
+<div class="user-info-dialog">
+    <!-- Header -->
+    <div class="header">
+        <h3>Thông tin tài khoản</h3>
+        <button (click)="closeDialog()">✖</button>
+    </div>
+
+    <!-- Avatar và tên -->
+    <div class="avatar-name">
+        <div class="avatar">
+            <img [src]="userData.avatar" alt="Avatar" class="avatar">
+            <mat-icon class="camera-icon">photo_camera</mat-icon>
+        </div>
+        <div class="name">
+            <span>{{ userData.name }}</span>
+            <mat-icon class="edit-icon" (click)="editName()">edit</mat-icon>
+        </div>
+    </div>
+
+    <!-- Thông tin cá nhân -->
+    <div class="personal-info">
+        <h4>Thông tin cá nhân</h4>
+        <div class="info-item">
+            <span class="info-item-left">Bio:</span>
+            <span class="info-item-right">{{ userData.bio }}</span>
+        </div>
+        <div class="info-item">
+            <span>Giới tính:</span>
+            <span>{{ userData.gender }}</span>
+        </div>
+        <div class="info-item">
+            <span>Ngày sinh:</span>
+            <span>{{ userData.birthDate }}</span>
+        </div>
+        <div class="info-item">
+            <span>Điện thoại:</span>
+            <span>{{ userData.phone }}</span>
+        </div>
+    </div>
+
+    <!-- Nút cập nhật -->
+    <button mat-button class="update-btn" (click)="updateUserInfo()">Cập nhật</button>
+</div>

@@ -49,6 +49,7 @@ export class FriendsComponent implements OnInit, OnDestroy {
           time: this.getRelativeTime(friend.lastMessage?.timestamp || friend.createdAt),
           isUnread: !friend.lastMessage?.isRead
         }));
+        console.log(friends);
       },
       error: (err) => {
         console.error('Lỗi khi load danh sách bạn bè:', err);

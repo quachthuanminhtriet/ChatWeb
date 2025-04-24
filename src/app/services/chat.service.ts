@@ -32,8 +32,10 @@ export class ChatService {
 
     // Lắng nghe sự kiện chat message từ server
     this.socket.on('chat message', (data: any) => {
-      console.log('📥 Nhận tin nhắn:', data);
-      this.updateMessages(data.message);
+      if (data.message && data.message.content) {  // Kiểm tra tin nhắn có nội dung
+        console.log('📥 Nhận tin nhắn:', data);
+        this.updateMessages(data.message);
+      }
     });
 
     // Lắng nghe sự kiện file message từ server
@@ -130,9 +132,11 @@ export class ChatService {
         createdAt: newMessage.createdAt,
         file: newMessage.fileUrl,
         fileType: newMessage.fileType,
-        fileName: newMessage.fileName || 'Tệp đính kèm',
+        fileName: newMessage.fileName || newMessage.fileData.fileName || 'Tệp đính kèm',
         fileData: newMessage.fileData || null
       });
+
+      console.log(newMessage);
     }
 
     const currentMessages = this.messagesSource.value;
@@ -146,6 +150,8 @@ export class ChatService {
       }
     ]);
   }
+
+
 
   sendFile(formData: FormData): Observable<any> {
     const token = localStorage.getItem('token');
